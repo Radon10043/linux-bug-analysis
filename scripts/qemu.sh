@@ -17,4 +17,4 @@ qemu-system-x86_64 \
     -hda $WORKSPACE/Debian/bullseye/bullseye.img \
     -snapshot \
     -kernel $WORKSPACE/linux/arch/x86/boot/bzImage \
-    -append "root=/dev/sda console=ttyS0" 2>&1 | tee kernel.log
+    -append "root=/dev/sda console=ttyS0" 2>&1 | tee repro/kernel.log

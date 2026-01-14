@@ -7,4 +7,4 @@ syzutils:
 	$(MAKE) -C syzkaller execprog executor symbolize -j8
 
 clean:
-	rm *.log
+	rm -rf repro/symbolize repro/*.log

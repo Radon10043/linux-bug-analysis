@@ -2,6 +2,7 @@ Debian/
 linux/
 syzkaller/
 email/
+buildroot/
 
-reproducer/*
-!reproducer/.gitkeep
+repro/*
+!repro/.gitkeep
