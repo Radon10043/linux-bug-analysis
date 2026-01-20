@@ -1,8 +1,5 @@
 Debian/
-linux/
-syzkaller/
 email/
-buildroot/
 
 repro/*
 !repro/.gitkeep
