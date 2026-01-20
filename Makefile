@@ -6,5 +6,5 @@ syzutils:
 kernel:
 	$(MAKE) -C linux CC="$(COMPILER)" olddefconfig all -j8
 
-clean:
-	rm -rf repro/symbolize repro/*.log repro/report
+cleanrepro:
+	rm -rf repro/symbolize repro/*.log repro/report repro/repro.c repro/repro.syz
