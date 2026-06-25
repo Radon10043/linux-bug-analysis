@@ -11,7 +11,7 @@ scp -P 2324 \
     -o BatchMode=yes \
     -o StrictHostKeyChecking=no \
     -o ConnectTimeout=10 \
-    -i $WORKSPACE/Debian/bullseye/bullseye.id_rsa \
+    -i $WORKSPACE/debian/trixie/trixie.id_rsa \
     -v \
     $WORKSPACE/repro/repro.c root@localhost:/tmp/repro.c
 
@@ -22,5 +22,5 @@ ssh -p 2324 \
     -o BatchMode=yes \
     -o StrictHostKeyChecking=no \
     -o ConnectTimeout=10 \
-    -i $WORKSPACE/Debian/bullseye/bullseye.id_rsa \
+    -i $WORKSPACE/debian/trixie/trixie.id_rsa \
     root@localhost "cd /tmp && gcc repro.c -lpthread -static -o repro.out && chmod +x ./repro.out && ./repro.out"

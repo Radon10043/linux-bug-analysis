@@ -3,7 +3,7 @@
 WORKSPACE=$(dirname $0)/..
 qemu-system-x86_64 \
     -m 2048 \
-    -smp 2 \
+    -smp 2,sockets=2,cores=1,threads=1 \
     -chardev socket,id=SOCKSYZ,server=on,wait=off,host=localhost,port=27617 \
     -mon chardev=SOCKSYZ,mode=control \
     -display none \
@@ -14,7 +14,7 @@ qemu-system-x86_64 \
     -cpu host,migratable=off \
     -device e1000,netdev=net0 \
     -netdev user,id=net0,restrict=on,hostfwd=tcp:127.0.0.1:2324-:22 \
-    -hda $WORKSPACE/Debian/bullseye/bullseye.img \
+    -hda $WORKSPACE/debian/trixie/trixie.img \
     -snapshot \
     -kernel $WORKSPACE/linux/arch/x86/boot/bzImage \
     -append "root=/dev/sda console=ttyS0 ftrace_dump_on_oops" 2>&1 | tee repro/kernel.log
