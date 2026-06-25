@@ -1,7 +1,7 @@
 COMPILER=ccache clang
 
 syzutils:
-	$(MAKE) -C syzkaller execprog executor symbolize -j8
+	$(MAKE) -C syzkaller generate execprog executor symbolize crush -j8
 
 kernel:
 	$(MAKE) -C linux CC="$(COMPILER)" olddefconfig all -j8
