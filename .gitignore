@@ -1,5 +1,6 @@
-Debian/
+debian/
 email/
+.codex-local/
 
 repro/*
 !repro/.gitkeep
