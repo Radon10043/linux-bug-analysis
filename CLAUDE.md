@@ -28,6 +28,8 @@ repository, but `linux/` here is the tree under test.
   is: not built, not run, or ran differently.
 - Do not modify or delete VM images, SSH keys, saved crash artifacts, or exported
   patches unless asked. They are untracked and there is no second copy.
+- When answer the user, explain the root cause of the issue, or write the patch commit
+  message, please in a way that even a fool could understand.
 
 ## Build and run
 
@@ -105,9 +107,16 @@ Commit-message shape used here (the most recent exported revision is the referen
    whole revision list, newest first. Reference code with version-pinned
    `elixir.bootlin.com` links.
 
+Every one of those parts is prose for a maintainer who has never opened this file:
+plain language, one idea per sentence, each term explained where it first appears.
+
 ## Reporting back
 
 Every hand-off states: files changed, the root cause in one or two sentences, the exact
 status of `make kernel`, the exact status of the reproducer run (including how long it
 ran), and anything left unverified. If validation could not run — missing image, missing
 reproducer, misconfigured manager config — say so instead of implying it passed.
+
+Write the hand-off the way Plain language demands: the verdict in the first line, one
+idea per sentence, no term left unexplained, and a plain statement of what was not
+checked.
